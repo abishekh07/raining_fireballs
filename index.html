@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://kit.fontawesome.com/3ff9803e4d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Raining Fire</title>
+  </head>
+  <body>
+    <h1 class="title">Raining Fire Balls</h1>
+
+    <script>
+      const body = document.body
+
+      setInterval(createFireball, 200)
+
+      function createFireball() {
+        const fireball = document.createElement('i')
+        fireball.classList.add('fas')
+        fireball.classList.add('fa-fire-alt')
+        fireball.classList.add('fall')
+        fireball.style = `position: absolute; left: ${Math.random() *
+          window.innerWidth}px; top: -3rem; color: red; display: inline-block; font-size: ${Math.random() *
+          1.85 +
+          3}rem; animation-duration: ${Math.random() * 1 + 2}s;`
+
+        body.appendChild(fireball)
+
+        setTimeout(() => fireball.remove(), 5000)
+      }
+    </script>
+  </body>
+</html>
